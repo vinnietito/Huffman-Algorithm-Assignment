@@ -16,7 +16,6 @@ typedef struct MinHeap
     Node **array;
 } MinHeap;
 
-// Function prototypes
 Node* createNode(char character, int frequency);
 MinHeap* createMinHeap(int capacity);
 void insertMinHeap(MinHeap *minHeap, Node *node);
@@ -26,20 +25,21 @@ void printCodes(Node *root, int arr[], int top);
 void HuffmanCoding(char *text);
 void calculateFrequency(char *text, int *frequency);
 
-int main() {
+int main()
+{
     char text[1000];
 
-    printf("Enter text to compress: ");
+    printf("Enter word to compress: ");
     fgets(text, sizeof(text), stdin);
-    text[strcspn(text, "\n")] = '\0'; // Remove newline character
+    text[strcspn(text, "\n")] = '\0';
 
     HuffmanCoding(text);
 
     return 0;
 }
 
-// Create a new node
-Node* createNode(char character, int frequency) {
+Node* createNode(char character, int frequency)
+{
     Node *node = (Node*)malloc(sizeof(Node));
     node->character = character;
     node->frequency = frequency;
@@ -47,8 +47,9 @@ Node* createNode(char character, int frequency) {
     return node;
 }
 
-// Create a min-heap
-MinHeap* createMinHeap(int capacity) {
+// A min heap
+MinHeap* createMinHeap(int capacity)
+{
     MinHeap *minHeap = (MinHeap*)malloc(sizeof(MinHeap));
     minHeap->size = 0;
     minHeap->capacity = capacity;
