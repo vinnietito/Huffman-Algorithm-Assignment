@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Node structure for Huffman Tree
-typedef struct Node {
+typedef struct Node
+{
     char character;
     int frequency;
     struct Node *left, *right;
 } Node;
 
-// Min-Heap structure
-typedef struct MinHeap {
+typedef struct MinHeap
+{
     int size;
     int capacity;
     Node **array;
