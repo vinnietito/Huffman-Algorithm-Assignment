@@ -83,7 +83,8 @@ Node* extractMin(MinHeap *minHeap)
 void buildMinHeap(MinHeap *minHeap)
 {
     int n = minHeap->size - 1;
-    for (int i = (n - 1) / 2; i >= 0; i--) {
+    for (int i = (n - 1) / 2; i >= 0; i--)
+	{
         int smallest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
@@ -141,13 +142,16 @@ void HuffmanCoding(char *text)
     calculateFrequency(text, frequency);
 
     MinHeap *minHeap = createMinHeap(strlen(text));
-    for (int i = 0; i < 256; i++) {
-        if (frequency[i] > 0) {
+    for (int i = 0; i < 256; i++)
+	{
+        if (frequency[i] > 0)
+		{
             insertMinHeap(minHeap, createNode(i, frequency[i]));
         }
     }
 
-    while (minHeap->size > 1) {
+    while (minHeap->size > 1)
+	{
         Node *left = extractMin(minHeap);
         Node *right = extractMin(minHeap);
         Node *top = createNode('$', left->frequency + right->frequency);
