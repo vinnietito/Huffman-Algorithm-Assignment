@@ -47,7 +47,6 @@ Node* createNode(char character, int frequency)
     return node;
 }
 
-// A min heap
 MinHeap* createMinHeap(int capacity)
 {
     MinHeap *minHeap = (MinHeap*)malloc(sizeof(MinHeap));
@@ -57,7 +56,6 @@ MinHeap* createMinHeap(int capacity)
     return minHeap;
 }
 
-// Adding a node into the min-heap
 void insertMinHeap(MinHeap *minHeap, Node *node)
 {
     minHeap->array[minHeap->size] = node;
