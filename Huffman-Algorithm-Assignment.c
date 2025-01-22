@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct Node
 {
@@ -17,7 +20,7 @@ Node* createNode(char character, int frequency);
 MinHeap* createMinHeap(int capacity);
 void insertMinHeap(MinHeap *minHeap, Node *node);
 Node* extractMin(MinHeap *minHeap);
-void buildMinHeap(MinHeap *minHeap);
+
 void printCodes(Node *root, int arr[], int top);
 void HuffmanCoding(char *text);
 void calculateFrequency(char *text, int *frequency);
