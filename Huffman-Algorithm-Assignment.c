@@ -102,34 +102,41 @@ void buildMinHeap(MinHeap *minHeap)
     }
 }
 
-// Calculate frequency of characters
-void calculateFrequency(char *text, int *frequency) {
-    for (int i = 0; text[i] != '\0'; i++) {
+void calculateFrequency(char *text, int *frequency)
+{
+    for (int i = 0; text[i] != '\0'; i++)
+	{
         frequency[(unsigned char)text[i]]++;
     }
 }
 
-// Print Huffman codes
-void printCodes(Node *root, int arr[], int top) {
-    if (root->left) {
+// Printing the Huffman
+void printCodes(Node *root, int arr[], int top)
+{
+    if (root->left)
+	{
         arr[top] = 0;
         printCodes(root->left, arr, top + 1);
     }
-    if (root->right) {
+    if (root->right)
+	{
         arr[top] = 1;
         printCodes(root->right, arr, top + 1);
     }
-    if (!root->left && !root->right) {
+    if (!root->left && !root->right)
+	{
         printf("%c: ", root->character);
-        for (int i = 0; i < top; i++) {
+        for (int i = 0; i < top; i++)
+		{
             printf("%d", arr[i]);
         }
         printf("\n");
     }
 }
 
-// Huffman Coding function
-void HuffmanCoding(char *text) {
+// Huffman function
+void HuffmanCoding(char *text)
+{
     int frequency[256] = {0};
     calculateFrequency(text, frequency);
 
