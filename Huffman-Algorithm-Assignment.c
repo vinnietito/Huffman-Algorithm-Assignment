@@ -57,8 +57,9 @@ MinHeap* createMinHeap(int capacity)
     return minHeap;
 }
 
-// Insert a node into the min-heap
-void insertMinHeap(MinHeap *minHeap, Node *node) {
+// Adding a node into the min-heap
+void insertMinHeap(MinHeap *minHeap, Node *node)
+{
     minHeap->array[minHeap->size] = node;
     int i = minHeap->size;
     while (i > 0 && minHeap->array[(i - 1) / 2]->frequency > minHeap->array[i]->frequency) {
@@ -70,8 +71,8 @@ void insertMinHeap(MinHeap *minHeap, Node *node) {
     minHeap->size++;
 }
 
-// Extract the minimum node from the heap
-Node* extractMin(MinHeap *minHeap) {
+Node* extractMin(MinHeap *minHeap)
+{
     Node *minNode = minHeap->array[0];
     minHeap->array[0] = minHeap->array[minHeap->size - 1];
     minHeap->size--;
@@ -79,8 +80,8 @@ Node* extractMin(MinHeap *minHeap) {
     return minNode;
 }
 
-// Build a min-heap
-void buildMinHeap(MinHeap *minHeap) {
+void buildMinHeap(MinHeap *minHeap)
+{
     int n = minHeap->size - 1;
     for (int i = (n - 1) / 2; i >= 0; i--) {
         int smallest = i;
